@@ -191,9 +191,10 @@ class NexusIdentifiers(ArchiveSection):
             else:
                 nx_data_path = attr_obj.attributes.get("m_nx_data_path")
                 nx_data_file = attr_obj.attributes.get("m_nx_data_file")
-
+            random_attr = "some random thing"
             nx_id.m_set_section_attribute("m_nx_data_path", nx_data_path)
             nx_id.m_set_section_attribute("m_nx_data_file", nx_data_file)
+            nx_id.m_set_section_attribute("m_nx_rama_attribute", random_attr)
 
             self.Nexus_identifiers.append(nx_id)
             nx_id.normalize(archive, logger)
