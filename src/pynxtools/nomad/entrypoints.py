@@ -60,7 +60,7 @@ nexus_data_converter = NexusDataConverterEntryPoint(
 )
 
 nexus_parser = NexusParserEntryPoint(
-    name="pynxtools parser",
+    name="pynxtools parser rkv",
     description="A parser for nexus files.",
     mainfile_name_re=r".*\.nxs",
     mainfile_mime_re="application/x-hdf*",
