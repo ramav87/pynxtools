@@ -254,6 +254,8 @@ class NexusParser(MatchingParser):
                     # if attributes are set before setting the quantity, a bug can cause them being set under a wrong variadic name
                     attribute.m_set_attribute("m_nx_data_path", hdf_node.name)
                     attribute.m_set_attribute("m_nx_data_file", self.nxs_fname)
+                    attribute.m_set_attribute("my_extra_field", "something random 4")
+
                 except Exception as e:
                     self._logger.warning(
                         f"error while setting attribute {data_instance_name} in {current.m_def} as {metainfo_def}",
@@ -341,6 +343,8 @@ class NexusParser(MatchingParser):
                 current.m_set(metainfo_def, field)
                 field.m_set_attribute("m_nx_data_path", hdf_node.name)
                 field.m_set_attribute("m_nx_data_file", self.nxs_fname)
+                field.m_set_attribute("my_extra_field", "something random 3")
+
                 if isvariadic:
                     concept_basename = get_quantity_base_name(field.name)
                     instancename = get_quantity_base_name(data_instance_name)
@@ -351,6 +355,7 @@ class NexusParser(MatchingParser):
                     current.m_set(name_metainfo_def, name_value)
                     name_value.m_set_attribute("m_nx_data_path", hdf_node.name)
                     name_value.m_set_attribute("m_nx_data_file", self.nxs_fname)
+                    name_value.m_set_attribute("my_extra_field", "something random 2")
                 if field_stats is not None:
                     concept_basename = get_quantity_base_name(field.name)
                     instancename = get_quantity_base_name(data_instance_name)
@@ -365,6 +370,7 @@ class NexusParser(MatchingParser):
                         current.m_set(stat_metainfo_def, stat)
                         stat.m_set_attribute("m_nx_data_path", hdf_node.name)
                         stat.m_set_attribute("m_nx_data_file", self.nxs_fname)
+                        stat.m_set_attribute("my_extra_field", "something random 1")
             except Exception as e:
                 self._logger.warning(
                     "error while setting field",
@@ -407,6 +413,7 @@ class NexusParser(MatchingParser):
                 if nx_node.tag.endswith("group"):
                     current.m_set_section_attribute("m_nx_data_path", current_hdf_path)
                     current.m_set_section_attribute("m_nx_data_file", self.nxs_fname)
+                    current.m_set_section_attribute("my_extra_field", "something random")
         self._populate_data(depth, nx_path, nx_def, hdf_node, current, attr)
 
     def get_sub_element_names(self, elem: MSection):
