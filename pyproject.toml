@@ -97,7 +97,7 @@ xrd = [
 ]
 
 [project.entry-points.'nomad.plugin']
-nexus_parser = "pynxtools.nomad.entrypoints:nexus_parser"
+my_custom_nexus_parser = "pynxtools.nomad.entrypoints:nexus_parser"
 nexus_schema = "pynxtools.nomad.entrypoints:nexus_schema"
 nexus_data_converter = "pynxtools.nomad.entrypoints:nexus_data_converter"
 nexus_app = "pynxtools.nomad.entrypoints:nexus_app"
@@ -136,7 +136,7 @@ select = [
     "PL", # pylint
     "UP", # pyupgrade
     # "F401", # remove unused import
-    "I001", # sort imports   
+    "I001", # sort imports
     # "NPY201", # reactivate when np>2.0 is used
 ]
 ignore = [

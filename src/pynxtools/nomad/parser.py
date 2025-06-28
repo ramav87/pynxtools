@@ -549,6 +549,7 @@ class NexusParser(MatchingParser):
         self._logger = logger if logger else get_logger(__name__)
         self._clear_class_refs()
 
+        self._logger.info("******** MY CUSTOM NEXUS PARSER LOADED ********")
         # if filename does not follow the pattern
         # .volumes/fs/<upload type>/<upload 2char>/<upoad>/<raw/arch>/[subdirs?]/<filename>
         self.nxs_fname = "/".join(mainfile.split("/")[6:]) or mainfile
