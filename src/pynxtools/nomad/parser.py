@@ -254,7 +254,7 @@ class NexusParser(MatchingParser):
                     # if attributes are set before setting the quantity, a bug can cause them being set under a wrong variadic name
                     attribute.m_set_attribute("m_nx_data_path", hdf_node.name)
                     attribute.m_set_attribute("m_nx_data_file", self.nxs_fname)
-                    attribute.m_set_attribute("my_extra_field", "something random 4")
+                    attribute.m_set_attribute("my_extra_field", 55)
 
                 except Exception as e:
                     self._logger.warning(
@@ -343,7 +343,7 @@ class NexusParser(MatchingParser):
                 current.m_set(metainfo_def, field)
                 field.m_set_attribute("m_nx_data_path", hdf_node.name)
                 field.m_set_attribute("m_nx_data_file", self.nxs_fname)
-                field.m_set_attribute("my_extra_field", "something random 3")
+                field.m_set_attribute("my_extra_field", 56)
 
                 if isvariadic:
                     concept_basename = get_quantity_base_name(field.name)
@@ -355,7 +355,7 @@ class NexusParser(MatchingParser):
                     current.m_set(name_metainfo_def, name_value)
                     name_value.m_set_attribute("m_nx_data_path", hdf_node.name)
                     name_value.m_set_attribute("m_nx_data_file", self.nxs_fname)
-                    name_value.m_set_attribute("my_extra_field", "something random 2")
+                    name_value.m_set_attribute("my_extra_field", 57)
                 if field_stats is not None:
                     concept_basename = get_quantity_base_name(field.name)
                     instancename = get_quantity_base_name(data_instance_name)
@@ -370,7 +370,7 @@ class NexusParser(MatchingParser):
                         current.m_set(stat_metainfo_def, stat)
                         stat.m_set_attribute("m_nx_data_path", hdf_node.name)
                         stat.m_set_attribute("m_nx_data_file", self.nxs_fname)
-                        stat.m_set_attribute("my_extra_field", "something random 1")
+                        stat.m_set_attribute("my_extra_field", 58)
             except Exception as e:
                 self._logger.warning(
                     "error while setting field",
