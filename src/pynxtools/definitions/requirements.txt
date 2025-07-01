@@ -1,0 +1,22 @@
+# Prepare for Documentation
+lxml>=4.9.1 
+pyyaml
+nyaml==0.2.2
+
+# Documentation building
+sphinx>=5
+sphinx-tabs
+sphinx-toolbox
+sphinx_comments
+chios
+sphinx-gallery>=0.18
+matplotlib
+h5py
+
+# Testing
+pytest
+
+# Code style and auto-formatting
+black>=24.1.1
+flake8>=4
+isort>=5.10
