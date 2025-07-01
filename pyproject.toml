@@ -117,7 +117,7 @@ pynxtools = ["definitions/**/*.xml", "definitions/**/*.xsd"]
 where = [
     "src",
 ]
-exclude = ["src/pynxtools/definitions*"]
+
 
 [tool.setuptools_scm]
 version_scheme = "no-guess-dev"
