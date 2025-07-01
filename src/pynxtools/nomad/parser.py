@@ -413,7 +413,7 @@ class NexusParser(MatchingParser):
                 if nx_node.tag.endswith("group"):
                     current.m_set_section_attribute("m_nx_data_path", current_hdf_path)
                     current.m_set_section_attribute("m_nx_data_file", self.nxs_fname)
-                    current.m_set_section_attribute("my_extra_field", "something random")
+                    #current.m_set_section_attribute("my_extra_field", "something random")
         self._populate_data(depth, nx_path, nx_def, hdf_node, current, attr)
 
     def get_sub_element_names(self, elem: MSection):
