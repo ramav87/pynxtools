@@ -136,6 +136,12 @@ class MyNexusIdentifiers(ArchiveSection):
     )
 
 class AnchoredReference(EntityReference):
+
+    my_extra_field = Quantity(
+        type=int,   # or str if you wish
+        description='My custom field for experimentation.'
+    )
+
     def normalize(self, archive, logger):
         def create_Entity(lab_id, archive, f_name, qunt_name):
             entitySec = Entity()
