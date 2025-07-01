@@ -109,7 +109,7 @@ but for practical purposes currently is interpretable only by human to provide t
                 of respective :ref:`NXevent_data_em` instances.
             </doc>
         </field>
-                <field name="my_extra_field" type="NX_CHAR">
+        <field name="my_extra_field" type="NX_CHAR">
             <doc>
                 A custom field I am just experimenting with here to see if I can get it to work.
             </doc>

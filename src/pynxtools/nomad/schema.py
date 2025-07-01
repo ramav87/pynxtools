@@ -129,6 +129,11 @@ class NexusActivityStep(ActivityStep):
         ),
     )
 
+class MyNexusIdentifiers(ArchiveSection):
+    my_extra_field = Quantity(
+        type=str,
+        description='My custom field from the NeXus file'
+    )
 
 class AnchoredReference(EntityReference):
     def normalize(self, archive, logger):
