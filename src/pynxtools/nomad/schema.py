@@ -720,6 +720,18 @@ def _add_additional_attributes(definition: Definition, container: Section):
             )
         )
 
+    if "my_custom_field" not in definition.attributes:
+        definition.attributes.append(
+            Attribute(
+                name="my_custom_field",
+                variable=False,
+                shape=[],
+                type=str,
+                description="This is a custom property. "
+                "This attribute is used for testing.",
+            )
+        )
+
     if isinstance(definition, Quantity):
         _add_quantity_stats(container, definition)
 
