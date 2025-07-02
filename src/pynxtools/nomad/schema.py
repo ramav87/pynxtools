@@ -199,13 +199,17 @@ class NexusIdentifiers(ArchiveSection):
                 nx_data_file = attr_obj.m_get_quantity_attribute(
                     idname, "m_nx_data_file"
                 )
+                extra_field = attr_obj.m_get_quantity_attribute(
+                    idname, "my_extra_field"
+                )
             else:
                 nx_data_path = attr_obj.attributes.get("m_nx_data_path")
                 nx_data_file = attr_obj.attributes.get("m_nx_data_file")
+                extra_field = attr_obj.attributes.get("my_extra_field")
             random_attr = 55
             nx_id.m_set_section_attribute("m_nx_data_path", nx_data_path)
             nx_id.m_set_section_attribute("m_nx_data_file", nx_data_file)
-            nx_id.m_set_section_attribute("my_extra_field", random_attr)
+            nx_id.m_set_section_attribute("my_extra_field", extra_field)
 
             self.Nexus_identifiers.append(nx_id)
             nx_id.normalize(archive, logger)
